@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Your Name</title>
+    <title>Academic Portfolio | Hosna Shah-Heidari</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-text: #2c3e50;
             --secondary-text: #546e7a;
-            --accent: #003366; /* Academic Blue */
+            --accent: #003366;
             --bg: #ffffff;
             --section-bg: #f8f9fa;
         }
@@ -29,7 +29,6 @@
             padding: 40px 20px;
         }
 
-        /* Header / Hero */
         header {
             border-bottom: 2px solid var(--accent);
             padding-bottom: 20px;
@@ -46,10 +45,9 @@
         .subtitle {
             font-size: 1.1rem;
             color: var(--secondary-text);
-            font-style: italic;
+  
         }
 
-        /* Navigation */
         nav {
             margin-top: 20px;
         }
@@ -68,7 +66,6 @@
             text-decoration: underline;
         }
 
-        /* Sections */
         section {
             margin-bottom: 50px;
         }
@@ -80,7 +77,15 @@
             margin-bottom: 25px;
         }
 
-        /* Content Blocks */
+        /* Added Subsection Styling */
+        h3 {
+            font-size: 1rem;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 25px 0 15px 0;
+        }
+
         .item {
             margin-bottom: 20px;
         }
@@ -101,7 +106,6 @@
             margin-top: 5px;
         }
 
-        /* Tags for Courses */
         .course-list {
             display: flex;
             flex-wrap: wrap;
@@ -116,7 +120,6 @@
             font-size: 0.85rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px;
@@ -134,65 +137,99 @@
 
 <div class="container">
     <header>
-        <h1>Jane Doe</h1>
-        <div class="subtitle">PhD Candidate in Computational Linguistics | University of Excellence</div>
+        <h1>Hosna Shah-Heidari</h1>
+        <div class="subtitle">Undergraduate Student in Computer Engineering | Sharif University of Technology</div>
         <nav>
             <a href="#about">About</a>
-            <a href="#cv">Curriculum Vitae</a>
             <a href="#courses">Courses</a>
+            <a href="#cv">Curriculum Vitae</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section id="about">
         <h2>Research Statement</h2>
-        <p>My work focuses on the intersection of machine learning and semantic analysis. I am particularly interested in how large language models interpret nuanced human context in academic writing. Currently, I am exploring the limits of transformer-based architectures in low-resource languages.</p>
+        <p>
+        My research interests lie at the intersection of <strong>Mathematical Optimization</strong> and <strong>Large Language Models (LLMs)</strong>. 
+        I am particularly fascinated by the role of <strong>Convex and Non-Convex Optimization</strong> in enhancing the efficiency and convergence 
+        of transformer-based architectures. My current work explores how structural constraints and principled optimization techniques can 
+        improve the reliability of machine learning models in low-resource environments.
+    </p>
+    <p>
+        Having built a rigorous foundation in <strong>Linear Algebra, Probability, and Discrete Structures</strong> at Sharif University, 
+        I seek to apply these theoretical insights to solve complex challenges in <strong>Computer Engineering</strong>—specifically 
+        in hardware-aware machine learning and the scalability of AI systems. I am eager to contribute to CUHK’s innovative research 
+        environment by developing optimization-centric solutions that push the boundaries of AI interpretability and performance.
+    </p>
     </section>
 
     <section id="cv">
-        <h2>Education & Experience</h2>
+        <h2>Education and Experience</h2>
         
         <div class="item">
             <div class="item-header">
-                <span>M.Sc. in Computer Science</span>
-                <span class="date">2022 — 2024</span>
+                <span>B.Sc. in Computer Engineering</span>
+                <span class="date">2023 — Present</span>
             </div>
-            <div class="description">Stanford University. GPA: 3.9/4.0. Thesis: "Neural Networks in Prose."</div>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span>Junior Research Fellow</span>
-                <span class="date">2024 — Present</span>
-            </div>
-            <div class="description">Global AI Lab. Leading a team of three in data curation and model validation.</div>
+            <div class="description">Sharif University of Technology. Major GPA: 3.74/4.0. Current GPA: 3.61/4.0.</div>
         </div>
     </section>
 
     <section id="courses">
-        <h2>Relevant Coursework</h2>
+        <h2>Courses Taken</h2>
+        
+        <h3>Computer Engineering</h3>
         <div class="course-list">
-            <span class="course-tag">Advanced Algorithms</span>
-            <span class="course-tag">Statistical Inference</span>
-            <span class="course-tag">Ethics in AI</span>
-            <span class="course-tag">Natural Language Processing</span>
-            <span class="course-tag">Linear Algebra</span>
+            <span class="course-tag">MACHINE LEARNING</span>
+            <span class="course-tag">ARTIFICIAL INTELLIGENCE</span>
+            <span class="course-tag">LINEAR ALGEBRA</span>
+            <span class="course-tag">ENGINEERING PROBABILITY & STATISTICS</span>
+            <span class="course-tag">INTRO BIOINFORMATICS</span>
+            <span class="course-tag">DATA STRUCTURE & ALGORITHM</span>
+            <span class="course-tag">ADVANCED PROGRAMMING</span>
+            <span class="course-tag">INTRO PROGRAMMING</span>
+            <span class="course-tag">DISCRETE STRUCTURES</span>
+            <span class="course-tag">THEORY OF MACHINES & LANGUAGES</span>
+            <span class="course-tag">OPERATING SYSTEMS</span>
+            <span class="course-tag">COMPUTER ARCHITECTURE</span>
+            <span class="course-tag">COMPUTER STRUCTURE & LANGUAGE</span>
+            <span class="course-tag">DIGITAL SYSTEMS DESIGN</span>
+            <span class="course-tag">DIGITAL SYSTEMS DESIGN LAB</span>
+            <span class="course-tag">LOGIC DESIGN</span>
+            <span class="course-tag">LOGIC DESIGN LAB</span>
+            <span class="course-tag">COMPUTER WORKSHOP</span>
+        </div>
+
+        <h3>General Sciences & Mathematics</h3>
+        <div class="course-list">
+            <span class="course-tag">GENERAL MATHEMATICS 1</span>
+            <span class="course-tag">GENERAL MATHEMATICS 2</span>
+            <span class="course-tag">DIFFERENTIAL EQUATIONS</span>
+            <span class="course-tag">PHYSICS 1</span>
+            <span class="course-tag">PHYSICS 2</span>
+            <span class="course-tag">PHYSICS LAB 2</span>
+        </div>
+
+        <h3>Other Courses</h3>
+        <div class="course-list">
+            <span class="course-tag">TECHNICAL PRESENTATION</span>
+            <span class="course-tag">COMPUTER TECHNOLOGY ENGLISH</span>
+            <span class="course-tag">GENERAL ENGLISH</span>
         </div>
     </section>
 
     <section id="contact">
         <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:j.doe@university.edu" style="color: var(--accent);">j.doe@university.edu</a></p>
-        <p>Office: Building 4, Room 202, University Campus.</p>
+        <p>Email: <a href="mailto:Hosnashahheidari1384@gmail.com" style="color: var(--accent);">Hosnashahheidari1384@gmail.com</a></p>
+        <p>GitHub Page: <a href="https://github.com/Hosna84" style="color: var(--accent);">GitHub</a></p>
     </section>
 
     <footer>
-        &copy; 2026 Jane Doe. Built with academic precision.
+        &copy; 2026 Hosna Shah-Heidari - Sharif University of Technology, Computer Engineering Dept.
     </footer>
 </div>
 
 <script>
-    // Smooth scrolling for navigation links
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
