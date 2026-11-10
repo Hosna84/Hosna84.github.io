@@ -1,245 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Portfolio | Hosna Shah-Heidari</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-text: #2c3e50;
-            --secondary-text: #546e7a;
-            --accent: #003366;
-            --bg: #ffffff;
-            --section-bg: #f8f9fa;
-        }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hosna Shahheidari — Computer Engineering, Optimization &amp; LLMs</title>
+<meta name="description" content="Personal website of Hosna Shahheidari, Computer Engineering student at Sharif University of Technology working on convex optimization and large language models.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --ink:#14213a; --muted:#53607a;
+  --line:#cfd8e3; --accent:#0e7490; --accent-soft:#d6eef4;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a2c; --surface:#16243b; --ink:#e8eef7; --muted:#a2b0c6;
+    --line:#2a3a56; --accent:#5cc8e0; --accent-soft:#16384a;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;font-size:17px}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--primary-text);
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg);
-        }
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav .wrap{display:flex;gap:22px;align-items:center;overflow-x:auto;padding-top:12px;padding-bottom:12px;white-space:nowrap}
+nav strong{font-family:var(--serif);font-size:1.05rem;margin-right:auto}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
 
-        .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding:72px 0 56px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.4rem,6vw,3.9rem);line-height:1.05;letter-spacing:-.02em}
+.lead{font-size:1.15rem;color:var(--muted);margin:20px 0 26px;max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border:1.5px solid var(--ink);border-radius:999px;color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.plot{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.plot svg{width:100%;height:auto;display:block}
+.plot figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
 
-        header {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-size:1.9rem;margin-bottom:24px;letter-spacing:-.01em}
+h3{font-size:1.08rem;font-weight:600}
+.meta{color:var(--muted);font-size:.92rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:var(--accent-soft);color:var(--ink);padding:4px 12px;border-radius:999px;font-size:.9rem}
 
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0;
-            color: var(--accent);
-        }
+.item{display:grid;grid-template-columns:150px 1fr;gap:8px 28px;padding:18px 0}
+.item + .item{border-top:1px dashed var(--line)}
+.item p{margin-top:6px}
+.item ul{margin:8px 0 0 18px}
+.item li{margin:3px 0}
+.stack{color:var(--muted);font-size:.9rem;margin-top:6px}
 
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--secondary-text);
-  
-        }
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.cols dt{font-weight:600;margin-top:12px}
+.cols dd{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:32px 0 48px;color:var(--muted);font-size:.92rem}
 
-        nav {
-            margin-top: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--accent);
-            margin-right: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            border-left: 4px solid var(--accent);
-            padding-left: 15px;
-            margin-bottom: 25px;
-        }
-
-        /* Added Subsection Styling */
-        h3 {
-            font-size: 1rem;
-            color: var(--secondary-text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 25px 0 15px 0;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 600;
-        }
-
-        .date {
-            color: var(--secondary-text);
-            font-size: 0.9rem;
-        }
-
-        .description {
-            font-size: 0.95rem;
-            margin-top: 5px;
-        }
-
-        .course-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .course-tag {
-            background: var(--section-bg);
-            border: 1px solid #ddd;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: var(--secondary-text);
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 600px) {
-            .item-header { flex-direction: column; }
-        }
-    </style>
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:44px}
+  .item,.cols{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>Hosna Shah-Heidari</h1>
-        <div class="subtitle">Undergraduate Student in Computer Engineering | Sharif University of Technology</div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#courses">Courses</a>
-            <a href="#cv">Curriculum Vitae</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<nav>
+  <div class="wrap">
+    <strong>Hosna Shahheidari</strong>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#publication">Publication</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-    <section id="about">
-        <h2>Research Statement</h2>
-        <p>
-        My research interests lie at the intersection of <strong>Mathematical Optimization</strong> and <strong>Large Language Models (LLMs)</strong>. 
-        I am particularly fascinated by the role of <strong>Convex and Non-Convex Optimization</strong> in enhancing the efficiency and convergence 
-        of transformer-based architectures. My current work explores how structural constraints and principled optimization techniques can 
-        improve the reliability of machine learning models in low-resource environments.
-    </p>
+<main class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Hosna Shahheidari</h1>
+      <p class="lead">Computer Engineering student at Sharif University of Technology. I study convex optimization and large language models, and I like building systems from the hardware up.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <figure class="plot">
+      <svg id="plot" viewBox="0 0 400 260" role="img" aria-label="Animation of gradient descent moving down a convex curve toward its minimum"></svg>
+      <figcaption>Gradient descent on a convex function: every step moves closer to the single global minimum.</figcaption>
+    </figure>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a B.Sc. student in Computer Engineering at Sharif University of Technology, Tehran (GPA 3.72/4.00). In 2023 I ranked 46th among 136,851 participants in the Iranian national university entrance exam (Konkoor), the top 0.05%.</p>
+    <div class="chips" aria-label="Research interests">
+      <span class="chip">Convex Optimization</span>
+      <span class="chip">Large Language Models</span>
+      <span class="chip">Machine Learning</span>
+      <span class="chip">Natural Language Processing</span>
+      <span class="chip">Bioinformatics</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="item">
+      <div class="meta">2024 – present</div>
+      <div>
+        <h3>AI Researcher, Machine Learning and Vision Laboratory</h3>
+        <div class="meta">Sharif University of Technology · Supervisor: Dr. M. Rohban</div>
+        <p>Research on large language models and artificial intelligence, focused on deep learning and optimization.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">Current</div>
+      <div>
+        <h3>Research Assistant, Electrical Engineering Department</h3>
+        <div class="meta">Sharif University of Technology · Supervisor: Dr. A. Amini</div>
+        <p>Research on convex optimization, covering both the theory and the practical use of optimization algorithms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="item">
+      <div class="meta">May – Jul 2024</div>
+      <div>
+        <h3>Gwent</h3>
+        <p>A LAN-based multiplayer card game with JSON user storage and a modular object-oriented design.</p>
+        <div class="stack">Java · JavaFX · CSS · <a href="https://github.com/Hosna84">GitHub</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">May 2024</div>
+      <div>
+        <h3>Atomic Bomber</h3>
+        <p>An arcade-style game built with MVC, with responsive real-time input and interactive visuals.</p>
+        <div class="stack">Java · JavaFX · <a href="https://github.com/Hosna84">GitHub</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">Jan 2025</div>
+      <div>
+        <h3>Closed-Curve Area Detection</h3>
+        <p>A computer vision system that finds closed curves in an image and computes their area using a reference object for scale.</p>
+        <div class="stack">Python · OpenCV · <a href="https://github.com/Hosna84">GitHub</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">Jun 2024</div>
+      <div>
+        <h3>UART-Style Protocol for MIPS</h3>
+        <p>A simplified serial communication protocol that synchronizes keyboard input, a TTY text display and LED output, with custom MIPS I/O instructions and shift-register data transfer.</p>
+        <div class="stack">Verilog · Logisim · <a href="https://github.com/Hosna84">GitHub</a></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">Jan – Feb 2024</div>
+      <div>
+        <h3>Neogit</h3>
+        <p>A simplified Git-like version control system with commits, branches and version tracking, tuned for speed and memory use.</p>
+        <div class="stack">C · Git · <a href="https://github.com/Hosna84">GitHub</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Internships</h2>
+    <div class="item">
+      <div class="meta">Research intern</div>
+      <div>
+        <h3>Zarrebin Company</h3>
+        <div class="meta">Supervisor: Dr. A. Amini</div>
+        <p>Worked on LLM and NLP projects, contributing to model fine-tuning and evaluation.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="meta">DevOps intern</div>
+      <div>
+        <h3>System Group (Hamkaran System)</h3>
+        <p>Worked on infrastructure automation, CI/CD pipeline management and containerization for software deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <div class="item">
+      <div class="meta">Teaching assistant</div>
+      <div>
+        <h3>Sharif University of Technology</h3>
+        <p>Led tutorials, assisted in labs, graded assignments and supported students in:</p>
+        <ul>
+          <li>Advanced Programming (Dr. Fazli)</li>
+          <li>Data Structures (Dr. Bejani)</li>
+          <li>Statistics and Probability (Dr. Jafari)</li>
+          <li>Linear Algebra (Dr. Rabiie, Dr. Ramezani)</li>
+          <li>Artificial Intelligence (Dr. Marioriad)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="publication">
+    <h2>Publication</h2>
+    <div class="item">
+      <div class="meta">2024</div>
+      <div>
+        <h3>Artificial Intelligence and the Internet of Medical Things (IoMT): Applications in Biomedical Systems for Smart Healthcare</h3>
+        <div class="meta">H. Shahheidari, N. H. Vahid · Journal of Artificial Intelligence Tools in Software and Data Engineering (AITSDE)</div>
+        <p>A review of AI-enabled IoMT applications, with technology acceptance evaluated using the UTAUT framework and SEM.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <dl class="cols">
+      <div>
+        <dt>Languages and paradigms</dt>
+        <dd>Python, Java, C, C++, Assembly, Verilog, VHDL, JavaFX, Logisim, object-oriented and low-level programming</dd>
+      </div>
+      <div>
+        <dt>Tools</dt>
+        <dd>LaTeX, Git, Docker, SQL, MVC</dd>
+        <dt>Human languages</dt>
+        <dd>English (professional), Persian (native)</dd>
+      </div>
+    </dl>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Sharif University of Technology, Azadi St., Tehran, Iran</p>
     <p>
-        Having built a rigorous foundation in <strong>Linear Algebra, Probability, and Discrete Structures</strong> at Sharif University, 
-        I seek to apply these theoretical insights to solve complex challenges in <strong>Computer Engineering</strong>—specifically 
-        in hardware-aware machine learning and the scalability of AI systems. I am eager to contribute to CUHK’s innovative research 
-        environment by developing optimization-centric solutions that push the boundaries of AI interpretability and performance.
+      <a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a> ·
+      <a href="https://github.com/Hosna84">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN/">LinkedIn</a>
     </p>
-    </section>
-
-    <section id="cv">
-        <h2>Education and Experience</h2>
-        
-        <div class="item">
-            <div class="item-header">
-                <span>B.Sc. in Computer Engineering</span>
-                <span class="date">2023 — Present</span>
-            </div>
-            <div class="description">Sharif University of Technology. Major GPA: 3.74/4.0. Current GPA: 3.61/4.0.</div>
-        </div>
-    </section>
-
-    <section id="courses">
-        <h2>Courses Taken</h2>
-        
-        <h3>Computer Engineering</h3>
-        <div class="course-list">
-            <span class="course-tag">MACHINE LEARNING</span>
-            <span class="course-tag">ARTIFICIAL INTELLIGENCE</span>
-            <span class="course-tag">LINEAR ALGEBRA</span>
-            <span class="course-tag">ENGINEERING PROBABILITY & STATISTICS</span>
-            <span class="course-tag">INTRO BIOINFORMATICS</span>
-            <span class="course-tag">DATA STRUCTURE & ALGORITHM</span>
-            <span class="course-tag">ADVANCED PROGRAMMING</span>
-            <span class="course-tag">INTRO PROGRAMMING</span>
-            <span class="course-tag">DISCRETE STRUCTURES</span>
-            <span class="course-tag">THEORY OF MACHINES & LANGUAGES</span>
-            <span class="course-tag">OPERATING SYSTEMS</span>
-            <span class="course-tag">COMPUTER ARCHITECTURE</span>
-            <span class="course-tag">COMPUTER STRUCTURE & LANGUAGE</span>
-            <span class="course-tag">DIGITAL SYSTEMS DESIGN</span>
-            <span class="course-tag">DIGITAL SYSTEMS DESIGN LAB</span>
-            <span class="course-tag">LOGIC DESIGN</span>
-            <span class="course-tag">LOGIC DESIGN LAB</span>
-            <span class="course-tag">COMPUTER WORKSHOP</span>
-        </div>
-
-        <h3>General Sciences & Mathematics</h3>
-        <div class="course-list">
-            <span class="course-tag">GENERAL MATHEMATICS 1</span>
-            <span class="course-tag">GENERAL MATHEMATICS 2</span>
-            <span class="course-tag">DIFFERENTIAL EQUATIONS</span>
-            <span class="course-tag">PHYSICS 1</span>
-            <span class="course-tag">PHYSICS 2</span>
-            <span class="course-tag">PHYSICS LAB 2</span>
-        </div>
-
-        <h3>Other Courses</h3>
-        <div class="course-list">
-            <span class="course-tag">TECHNICAL PRESENTATION</span>
-            <span class="course-tag">COMPUTER TECHNOLOGY ENGLISH</span>
-            <span class="course-tag">GENERAL ENGLISH</span>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:Hosnashahheidari1384@gmail.com" style="color: var(--accent);">Hosnashahheidari1384@gmail.com</a></p>
-        <p>GitHub Page: <a href="https://github.com/Hosna84" style="color: var(--accent);">GitHub</a></p>
-    </section>
-
-    <footer>
-        &copy; 2026 Hosna Shah-Heidari - Sharif University of Technology, Computer Engineering Dept.
-    </footer>
-</div>
+  </div>
+</footer>
 
 <script>
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+(function(){
+  var svg=document.getElementById('plot'),NS='http://www.w3.org/2000/svg';
+  var W=400,H=260,pad=28;
+  function X(t){return W/2+t*150}
+  function Y(t){return H-pad-t*t*170}
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);svg.appendChild(e);return e}
+  var d='';
+  for(var t=-1.25;t<=1.251;t+=.05){d+=(d?'L':'M')+X(t).toFixed(1)+' '+Y(t).toFixed(1)}
+  el('line',{x1:pad,y1:H-pad,x2:W-pad,y2:H-pad,stroke:'var(--line)','stroke-width':1.5});
+  el('path',{d:d,fill:'none',stroke:'var(--ink)','stroke-width':2.5,'stroke-linecap':'round'});
+  var min=el('circle',{cx:X(0),cy:Y(0),r:5,fill:'none',stroke:'var(--accent)','stroke-width':2});
+  var trail=el('g',{});
+  var ball=el('circle',{cx:X(1),cy:Y(1),r:7,fill:'var(--accent)'});
+  var x=1,k=0,timer;
+  function draw(){ball.setAttribute('cx',X(x));ball.setAttribute('cy',Y(x))}
+  function step(){
+    var dot=document.createElementNS(NS,'circle');
+    dot.setAttribute('cx',X(x));dot.setAttribute('cy',Y(x));dot.setAttribute('r',3);
+    dot.setAttribute('fill','var(--accent)');dot.setAttribute('opacity','.45');
+    trail.appendChild(dot);
+    x=x-0.22*2*x;k++;draw();
+    if(k>=10){clearInterval(timer);setTimeout(reset,1800)}
+  }
+  function reset(){
+    while(trail.firstChild)trail.removeChild(trail.firstChild);
+    x=1;k=0;draw();timer=setInterval(step,650);
+  }
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    for(var i=0;i<8;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',X(Math.pow(.56,i)));c.setAttribute('cy',Y(Math.pow(.56,i)));c.setAttribute('r',3);c.setAttribute('fill','var(--accent)');c.setAttribute('opacity','.5');trail.appendChild(c)}
+    x=0;draw();
+  }else{timer=setInterval(step,650)}
+})();
 </script>
-
 </body>
 </html>
